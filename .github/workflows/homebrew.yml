@@ -1,0 +1,36 @@
+name: Submit release to the Homebrew community repository
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish-homebrew:
+    name: Submit to Homebrew repository
+
+    # GitHub token permissions needed for homebrew-bump-cask to submit a PR
+    permissions:
+      contents: read
+      pull-requests: write
+
+    runs-on: ubuntu-latest
+      
+    # homebrew-bump-cask will read the following environment variable to access the GitHub token needed for submitting a PR
+    env:
+      HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+
+    steps:
+      - name: Determine cask name based on release type
+        id: cask-info
+        run: |
+          if [[ "${{ github.event.release.prerelease }}" == "true" ]]; then
+            echo "cask=copilot-cli@prerelease" >> $GITHUB_OUTPUT
+          else
+            echo "cask=copilot-cli" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update Homebrew cask
+        uses: macauley/action-homebrew-bump-cask@v1
+        with:
+          token: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+          cask: ${{ steps.cask-info.outputs.cask }}
