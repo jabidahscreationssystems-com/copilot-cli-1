@@ -154,8 +154,13 @@ if ! command -v copilot >/dev/null 2>&1; then
     printf "Would you like to add it to %s? [y/N] " "$RC_FILE"
     if read -r REPLY </dev/tty 2>/dev/null; then
       if [ "$REPLY" = "y" ] || [ "$REPLY" = "Y" ]; then
-        echo "export PATH=\"$INSTALL_DIR:\$PATH\"" >> "$RC_FILE"
-        echo "✓ Added PATH export to $RC_FILE"
+        # Check if PATH export already exists to avoid duplicates
+        if ! grep -q "export PATH=\"$INSTALL_DIR:\$PATH\"" "$RC_FILE" 2>/dev/null; then
+          echo "export PATH=\"$INSTALL_DIR:\$PATH\"" >> "$RC_FILE"
+          echo "✓ Added PATH export to $RC_FILE"
+        else
+          echo "✓ PATH export already exists in $RC_FILE"
+        fi
       fi
     fi
   else

@@ -1,4 +1,4 @@
-## 0.0.400 - 2026-01-30
+## 0.0.400 - 2025-01-30
 
 - Add MCP server instructions support
 - Timeline displays user responses to `ask_user` tool prompts with username
@@ -26,7 +26,7 @@
 - Add `launch_messages` config for startup announcements
 - The Code Review tool handles large changesets by ignoring build artifacts and limiting to 100 files
 
-## 0.0.399 - 2026-01-29
+## 0.0.399 - 2025-01-29
 
 - Compaction messages show clearer command hints to view checkpoint summaries
 - Press Ctrl+X then / to run slash commands without losing your input
@@ -42,13 +42,13 @@
 - Add `/diff` command to review session changes
 - Undo/rewind to previous states with double-Esc
 
-## 0.0.398 - 2026-01-28
+## 0.0.398 - 2025-01-28
 
 - Fix a regression that caused "Invalid session id" errors for agent shell calls
 - CLI header uses middle-truncation for paths in narrow terminals, preserving first and last folders
 - Skills from parent directories are now invocable and work in non-git directories
 
-## 0.0.397 - 2026-01-28
+## 0.0.397 - 2025-01-28
 
 - `/mcp show <server-name>` displays server details and available tools
 - Header layout adapts better to narrow terminal widths
@@ -59,7 +59,7 @@
 - Directories now appear in @mention autocomplete
 - Session summary displays accurate line counts
 
-## 0.0.396 - 2026-01-27
+## 0.0.396 - 2025-01-27
 
 - Skill names can include uppercase letters
 - Ctrl+E moves cursor to end of line when typing without expanding timeline
@@ -85,7 +85,7 @@
 - Undo/rewind shows accurate count of affected files
 - Pre-releases on GitHub now show detailed changelog notes
 
-## 0.0.395 - 2026-01-26
+## 0.0.395 - 2025-01-26
 
 - Select escape item shows blinking cursor to indicate text input
 - `/mcp show` displays all configured MCP servers including defaults and servers from additional configuration.
@@ -99,7 +99,7 @@
 - Completed tool calls display in prompt mode
 - Add commenting to /diff mode for line-specific feedback
 
-## 0.0.394 - 2026-01-24
+## 0.0.394 - 2025-01-24
 
 - Deduplicate identical model instruction files to save context
 - Exit summary displays accurate usage metrics instead of zeros
@@ -119,7 +119,7 @@
 - Queue slash commands alongside messages using Ctrl+D
 - Press `/` to search sessions in `/resume`
 
-## 0.0.393 - 2026-01-23
+## 0.0.393 - 2025-01-23
 
 - Show conversation compaction status as timeline messages instead of header indicator
 - Memory loading no longer warns when outside a Git repository
@@ -128,20 +128,20 @@
 - Expose MCP server and tool names in tool.execution_start events for better error handling
 - Add Esc-Esc to undo file changes to any previous snapshot
 
-## 0.0.392 - 2026-01-22
+## 0.0.392 - 2025-01-22
 
 - Add `/plugin` command for plugin marketplace management
 - Add /rename command as alias for /session rename
 - Add /plugin update command to update installed plugins
 - Edit tool now displays diffs when expanded in timeline
 
-## 0.0.390 - 2026-01-22
+## 0.0.390 - 2025-01-22
 
 - Preserve extended thinking after compaction
 - Custom agents with MCP servers avoid unnecessary restarts
 - Enable steering during plan mode
 
-## 0.0.389 - 2026-01-22
+## 0.0.389 - 2025-01-22
 
 - Improve `/session` command visual hierarchy and colors
 - Subagents receive correct tools when using different models
@@ -162,7 +162,7 @@
 - Reduce padding in welcome header
 - Shell commands (!) can run in parallel while agent is working
 
-## 0.0.388 - 2026-01-20
+## 0.0.388 - 2025-01-20
 
 - Add `/review` command to analyze code changes
 - Make session event messages more concise and visually clean
@@ -172,18 +172,18 @@
 - Remove commit hash from CLI header
 - Redesign CLI header with branded mascot and streamlined welcome message
 
-## 0.0.387 - 2026-01-20
+## 0.0.387 - 2025-01-20
 
 - Skill tool handles large directories without exceeding context limits
 - Add ask_user tool for interactive clarification questions
 - Add plan mode with dedicated panel for viewing implementation plans
 
-## 0.0.386 - 2026-01-19
+## 0.0.386 - 2025-01-19
 
 - Background compaction preserves tool call sequences correctly
 - Add `/resume` command to switch sessions
 
-## 0.0.385 - 2026-01-19
+## 0.0.385 - 2025-01-19
 
 - The store_memory tool is only included when memory is enabled for the user
 - Input placeholder now says "Type" instead of "Enter" to avoid confusion with Enter key
@@ -197,7 +197,7 @@
 - Press Escape to cancel manual `/compact` command
 - Model switching from Codex to Opus preserves conversation history correctly
 
-## 0.0.384 - 2026-01-16
+## 0.0.384 - 2025-01-16
 
 - Add `&` prefix shortcut for delegating prompts to run in background (equivalent to `/delegate`)
 - Tab completion cycles correctly based on typed prefix, not completed text
@@ -219,19 +219,19 @@
 - Show delay time when Copilot reads shell output with a delay
 - Support proxy URLs without scheme (e.g., localhost:9999)
 
-## 0.0.382 - 2026-01-14
+## 0.0.382 - 2025-01-14
 
 - Add support for GPT-5.2-Codex model
 - Add `--config-dir` flag to override default configuration directory location
 
-## 0.0.381 - 2026-01-13
+## 0.0.381 - 2025-01-13
 
 - Add --allow-all and --yolo flags to enable all permissions at once
 - Ghost text and tab completion show correct alias when typing slash commands like '/q' for '/quit'
 - Add `/new` as an alias for `/clear` command
 - Shell mode history navigation now filters by prefix - typing `!git` and pressing up arrow cycles only through previous git commands
 
-## 0.0.380 - 2026-01-13
+## 0.0.380 - 2025-01-13
 
 - Retrieving models handles network errors from firewalled routes gracefully, raises errors appropriately
 - Bash command text aligns with output in timeline events
@@ -248,18 +248,18 @@
 - Send messages while Copilot is thinking to steer or queue
 - Keyboard shortcuts: Ctrl+O now expands recent timeline, Ctrl+E expands all timeline (Ctrl+R unbound for future use)
 
-## 0.0.377 - 2026-01-08
+## 0.0.377 - 2025-01-08
 
 - Large file messages now encourage incremental reading with view_range instead of discouraging all reading
 
-## 0.0.376 - 2026-01-08
+## 0.0.376 - 2025-01-08
 
 - Loading remote sessions using GraphQL ID or session picker
 - Task tool subagents can now process images
 - Downgrading CLI version no longer requires manually clearing downloaded packages
 - Large tool outputs are written to disk and models are encouraged to use efficient search tools
 
-## 0.0.375 - 2026-01-07
+## 0.0.375 - 2025-01-07
 
 - Add Ctrl+T to toggle reasoning summaries for supported models
 - Add --share and --share-gist flags for session sharing in non-interactive mode
@@ -269,7 +269,7 @@
 - SVG files are now treated as text files instead of binary images
 - Fix 'Connection Error' issues due to subscription-based route used in chat completions
 
-## 0.0.374 - 2026-01-02
+## 0.0.374 - 2025-01-02
 
 - MCP server type help text displays correct options
 - Model picker shows clearer message with settings link when models are unavailable
