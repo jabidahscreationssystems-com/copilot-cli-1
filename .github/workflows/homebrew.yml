@@ -14,8 +14,9 @@ jobs:
       pull-requests: write
 
     runs-on: ubuntu-latest
-      
-    # homebrew-bump-cask will read the following environment variable to access the GitHub token needed for submitting a PR
+
+    # homebrew-bump-cask will read the following environment variable to
+    # access the GitHub token needed for submitting a PR
     env:
       HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
 
